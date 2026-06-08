@@ -36,7 +36,7 @@ def main(argv: list[str] | None = None) -> None:
     # --- get ---
     p_get = sub.add_parser("get", help="Read journal entries")
     _add_json_flag(p_get)
-    p_get.add_argument("--date", help="Single date (ISO, 'today', 'yesterday')")
+    p_get.add_argument("--date", "-d", help="Single date (ISO, 'today', 'yesterday')")
     p_get.add_argument("--from", dest="from_date", help="Range start")
     p_get.add_argument("--to", dest="to_date", help="Range end")
     p_get.set_defaults(func=cmd_get)
