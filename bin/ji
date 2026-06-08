@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+"""Entry-point launcher for ji — adds the src tree to sys.path."""
+
+import sys
+from pathlib import Path
+
+# Resolve src/ji relative to this script
+HERE = Path(__file__).resolve().parent
+SRC = HERE.parent / "src"
+sys.path.insert(0, str(SRC))
+
+from ji.cli import main
+
+main()
